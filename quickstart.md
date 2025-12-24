@@ -6,28 +6,24 @@
 conda create -n reskin-ai python=3.10 -y
 conda activate reskin-ai
 
-pip install -r requirements.txt
-2. 서버 실행
-CPU 강제 실행 (GPU 없는 환경에서도 가능)
-bash
-코드 복사
+pip install -r requirement.txt
+```
+
+### 2. 서버 실행
+```bash
+# CPU 강제 실행 (GPU 없는 환경에서도 가능)
 RESKIN_DEVICE=cpu python -m uvicorn api.app:app --reload
-GPU 사용 (가능한 환경)
-bash
-코드 복사
+
+GPU 사용 
 RESKIN_DEVICE=cuda python -m uvicorn api.app:app --reload
-3. 테스트
+```
+
+### 3. 테스트
 Swagger UI: http://127.0.0.1:8000/docs
 
 Health check:
-
-bash
-코드 복사
 curl http://127.0.0.1:8000/api/health
 분석 API 테스트:
-
-bash
-코드 복사
 curl -X POST "http://127.0.0.1:8000/api/skin/analyze" \
   -F "front=@front.jpg" \
   -F "left=@left.jpg" \
