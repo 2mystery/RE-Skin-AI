@@ -1,6 +1,9 @@
 # api/skin_service.py
+import os
+import torch
+
 from pathlib import Path
-from typing import Union
+from typing import Optional, Union
 
 from PIL import Image
 
@@ -17,8 +20,18 @@ class SkinAnalysisService:
     def __init__(
         self,
         acne_ckpt_path: str = "acne/acne_resnet50_best.pth",
-        device: str | None = None,
-    ):
+        device: Optional[str] = None,
+    ): 
+
+        if device is None:
+            env_device = os.getenv("RESKIN_DEVICE")
+            if env_device:
+                device = env_device.lower()
+            else:
+                device = "cuda" if torch.cuda.is_available() else "cpu"
+        
+        self.device = device
+
         # 여드름 모델
         self.acne_predictor = AcnePredictor(acne_ckpt_path, device=device)
 
