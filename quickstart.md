@@ -20,11 +20,3 @@ RESKIN_DEVICE=cuda python -m uvicorn api.app:app --reload
 
 ### 3. 테스트
 Swagger UI: http://127.0.0.1:8000/docs
-
-Health check:
-curl http://127.0.0.1:8000/api/health
-분석 API 테스트:
-curl -X POST "http://127.0.0.1:8000/api/skin/analyze" \
-  -F "front=@front.jpg" \
-  -F "left=@left.jpg" \
-  -F "right=@right.jpg"
