@@ -4,3 +4,5 @@ __pycache__/
 .venv/
 .vscode/
 *.pth
+acne/acne_resnet50_best.pth
+venv/
