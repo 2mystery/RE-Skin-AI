@@ -162,7 +162,7 @@ RESKIN_DEVICE=cuda
 👉 **[Quick Start Guide](./quickstart.md)**
 
 
-👉 **[requirements.txt](./requirements.txt)**
+👉 **[requirements.txt](./requirement.txt)**
 
 ---
 
@@ -218,3 +218,4 @@ RESKIN_DEVICE=cuda
 * 실제 사용자 데이터 기반 재학습
 
 ---
+
