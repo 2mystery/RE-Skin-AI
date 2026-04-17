@@ -1,4 +1,4 @@
-# 🧴 2025 TAB PROJECT: RE-Skin(AI)
+# 🧴 2025 TAB PROJECT: RE-Skin(AI) by. 42기 이신비
 
 ### Multi-View Facial Skin Analysis AI Server
 
